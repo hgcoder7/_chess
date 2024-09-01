@@ -5,6 +5,7 @@ const {Chess} =require('chess.js');
 const path=require('path');
 const { log } = require('console');
 
+const port=process.env.PORT || 3000;
 const app=express();
 const server=http.createServer(app);
 const io=socket(server);
@@ -62,7 +63,7 @@ io.on("connection", function(uniquesocket){
    
 })
 
-server.listen(3000,function(){
+server.listen(port,function(){
     console.log("listening ");
     
 })
